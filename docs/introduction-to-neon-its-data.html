@@ -198,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.12" data-path="introduction-to-neon-its-data.html"><a href="introduction-to-neon-its-data.html#stacking-neon-data"><i class="fa fa-check"></i><b>2.12</b> Stacking NEON data</a></li>
 <li class="chapter" data-level="2.13" data-path="introduction-to-neon-its-data.html"><a href="introduction-to-neon-its-data.html#intro-to-neon-exercises"><i class="fa fa-check"></i><b>2.13</b> Intro to NEON Exercises</a><ul>
-<li class="chapter" data-level="2.13.1" data-path="introduction-to-neon-its-data.html"><a href="introduction-to-neon-its-data.html#computational-1"><i class="fa fa-check"></i><b>2.13.1</b> Computational</a></li>
+<li class="chapter" data-level="2.13.1" data-path="introduction-to-neon-its-data.html"><a href="introduction-to-neon-its-data.html#computational-part-2"><i class="fa fa-check"></i><b>2.13.1</b> Computational Part 2</a></li>
 <li class="chapter" data-level="2.13.2" data-path="introduction-to-neon-its-data.html"><a href="introduction-to-neon-its-data.html#written"><i class="fa fa-check"></i><b>2.13.2</b> Written</a></li>
 </ul></li>
 </ul></li>
@@ -275,6 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.12.5" data-path="digital-repeat-photography-networks.html"><a href="digital-repeat-photography-networks.html#digital-repeat-photography-written"><i class="fa fa-check"></i><b>4.12.5</b> Digital Repeat Photography Written</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html"><i class="fa fa-check"></i>Frequently Asked Questions:</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/katharynduffy/katharynduffy.github.io" target="blank">Published with bookdown</a></li>
 
@@ -575,7 +576,7 @@ up initially, but once it’s done, it’s done globally, and it will work in
 every script you run.</p></li>
 </ul>
 <div id="option-1-save-token-in-a-local-file" class="section level4">
-<h4><span class="header-section-number">2.7.4.1</span> OPtion 1: Save token in a local file</h4>
+<h4><span class="header-section-number">2.7.4.1</span> Option 1: Save token in a local file</h4>
 <p>Open a new, empty R script (.R). Put a single line of code in the script:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">NEON_TOKEN &lt;-<span class="st"> &quot;PASTE YOUR TOKEN HERE&quot;</span></a></code></pre></div>
 <p>Save this file within your current R project and call the file <code>neon_token_source.R</code>. So that you don’t accidently push your token up to GitHub, move over to the command line or Atom.io and add it to your <code>.gitignore</code> file:</p>
@@ -666,7 +667,7 @@ token.</p>
 ## Copied the most recent publication of categoricalCodes file to /stackedFiles
 ## Copied the most recent publication of variable definition file to /stackedFiles
 ## Finished: Stacked 3 data tables and 3 metadata tables!
-## Stacking took 0.2176471 secs
+## Stacking took 0.267123 secs
 ## All unzipped monthly data folders have been removed.</code></pre>
 <p>Now, use the <code>getLocTOS()</code> function in the <code>geoNEON</code> package to get precise locations for the tagged plants. You can refer to the package documentation for more details.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">vegmap &lt;-<span class="st"> </span><span class="kw">getLocTOS</span>(veglist<span class="op">$</span>vst_mappingandtagging, </a>
@@ -994,7 +995,7 @@ token.</p>
 ## Copied the most recent publication of categoricalCodes file to /stackedFiles
 ## Copied the most recent publication of variable definition file to /stackedFiles
 ## Finished: Stacked 3 data tables and 3 metadata tables!
-## Stacking took 0.09085798 secs
+## Stacking took 0.09518909 secs
 ## All unzipped monthly data folders have been removed.</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">summary</span>(veglist)</a></code></pre></div>
 <pre><code>##                        Length Class       Mode
@@ -1209,7 +1210,7 @@ identifier for the data product:</p>
 <a class="sourceLine" id="cb43-5" data-line-number="5">req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/products/DP1.10003.001&quot;</span>)</a>
 <a class="sourceLine" id="cb43-6" data-line-number="6">req</a></code></pre></div>
 <pre><code>## Response [https://data.neonscience.org/api/v0/products/DP1.10003.001]
-##   Date: 2020-08-19 18:32
+##   Date: 2020-08-20 13:03
 ##   Status: 200
 ##   Content-Type: application/json;charset=UTF-8
 ##   Size: 24.2 kB</code></pre>
@@ -1543,56 +1544,56 @@ you need to iterate this code, GET fails if you give it more than one URL.</p>
 <a class="sourceLine" id="cb57-5" data-line-number="5"><span class="co"># view just the available data files </span></a>
 <a class="sourceLine" id="cb57-6" data-line-number="6">brd.files<span class="op">$</span>data<span class="op">$</span>files</a></code></pre></div>
 <pre><code>##                                                                               name
-## 1                   NEON.D09.WOOD.DP1.10003.001.2015-07.basic.20191107T152331Z.zip
-## 2      NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.basic.20191107T152331Z.csv
-## 3                       NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv
-## 4                          NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt
-## 5                      NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv
-## 6     NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.basic.20191107T152331Z.csv
-## 7           NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml
+## 1                       NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv
+## 2           NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml
+## 3      NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.basic.20191107T152331Z.csv
+## 4                      NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv
+## 5                          NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt
+## 6                   NEON.D09.WOOD.DP1.10003.001.2015-07.basic.20191107T152331Z.zip
+## 7     NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.basic.20191107T152331Z.csv
 ## 8         NEON.D09.WOOD.DP1.10003.001.brd_references.expanded.20191107T152331Z.csv
-## 9                          NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt
-## 10               NEON.D09.WOOD.DP1.10003.001.2015-07.expanded.20191107T152331Z.zip
-## 11                      NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv
-## 12  NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.expanded.20191107T152331Z.csv
-## 13 NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.expanded.20191107T152331Z.csv
-## 14          NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml
-## 15                     NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv
+## 9                       NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv
+## 10          NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml
+## 11 NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.expanded.20191107T152331Z.csv
+## 12                     NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv
+## 13               NEON.D09.WOOD.DP1.10003.001.2015-07.expanded.20191107T152331Z.zip
+## 14                         NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt
+## 15  NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.expanded.20191107T152331Z.csv
 ## 16                          NEON.Bird_Conservancy_of_the_Rockies.brd_personnel.csv
 ##      size                              md5 crc32
-## 1   67816 4438e5e050fc7be5949457f42089a397    NA
-## 2   23521 f37931d46213246dccf2a161211c9afe    NA
-## 3    7337 e67f1ae72760a63c616ec18108453aaa    NA
-## 4   12784 d84b496cf950b5b96e762473beda563a    NA
-## 5   10084 6d15da01c03793da8fc6d871e6659ea8    NA
-## 6  346679 e0adb3146b5cce59eea09864145efcb1    NA
-## 7   70539 df102cb4cfdce092cda3c0942c9d9b67    NA
+## 1    7337 e67f1ae72760a63c616ec18108453aaa    NA
+## 2   70539 df102cb4cfdce092cda3c0942c9d9b67    NA
+## 3   23521 f37931d46213246dccf2a161211c9afe    NA
+## 4   10084 6d15da01c03793da8fc6d871e6659ea8    NA
+## 5   12784 d84b496cf950b5b96e762473beda563a    NA
+## 6   67816 4438e5e050fc7be5949457f42089a397    NA
+## 7  346679 e0adb3146b5cce59eea09864145efcb1    NA
 ## 8    1012 d76cfc5443ac27a058fab1d319d31d34    NA
-## 9   13063 680a2f53c0a9d1b0ab4f8814bda5b399    NA
-## 10  79998 22e3353dabb8b154768dc2eee9873718    NA
-## 11   7337 e67f1ae72760a63c616ec18108453aaa    NA
-## 12  23521 f37931d46213246dccf2a161211c9afe    NA
-## 13 367402 2ad379ae44f4e87996bdc3dee70a0794    NA
-## 14  78750 6ba91b6e109ff14d1911dcaad9febeb9    NA
-## 15  10084 6d15da01c03793da8fc6d871e6659ea8    NA
+## 9    7337 e67f1ae72760a63c616ec18108453aaa    NA
+## 10  78750 6ba91b6e109ff14d1911dcaad9febeb9    NA
+## 11 367402 2ad379ae44f4e87996bdc3dee70a0794    NA
+## 12  10084 6d15da01c03793da8fc6d871e6659ea8    NA
+## 13  79998 22e3353dabb8b154768dc2eee9873718    NA
+## 14  13063 680a2f53c0a9d1b0ab4f8814bda5b399    NA
+## 15  23521 f37931d46213246dccf2a161211c9afe    NA
 ## 16  46349 a2c47410a6a0f49d0b1cf95be6238604    NA
 ##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        url
-## 1                      https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.2015-07.basic.20191107T152331Z.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=2725bbdbbd84a42c4efcb352e9a3c7cc2d972f67f5688b786e778bd01bba26ea
-## 2         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.basic.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=b77172768805c00f31cb275c65de31b5958005cc412d56ff7709daad201a126e
-## 3                          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=761685f2e56be768c2bdcc9db7635935cd19c3f53b27383d35ad13c5a2749faa
-## 4                             https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=115cc47e0115f3aa382f80272b87577add9294e01e8064c69e2472eb47d02958
-## 5                         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=1786dd39bc46965816295a7deb43a13cbbf9811ffc2fa074f8901bdcc3fd3a53
-## 6        https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.basic.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=768565b6e8f8b89343fe654359d309d94e59ab97b53f8e52b3d7f7833aacfa51
-## 7              https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=60e37e3c138bbb5888c38cc23da97c8ab19a2fd75384379ff856b3bb33c54b03
-## 8         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_references.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=02ce35f9b2e353380703bfc87292611648b5d4b03368948ae07b42b422b3c866
-## 9                          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3599&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=d3a3ddc6477c1a5c03260ad3100688095d96be6fd3d922ad3e2b5847b3ff50c3
-## 10               https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.2015-07.expanded.20191107T152331Z.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=50548bb18dab94abadaeb66e597d5df92cfabc53158dcef703cd12feb854a193
-## 11                      https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=25f0e3a27f4f726ac19391c27efbc48fa7cc53ba4e7798dffd0918f0aac6b60f
-## 12  https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=f0928786c8ba9f844459ccf718c129e794daf5b1c9e06a417a0ed6c9f6ca4535
-## 13 https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=2ca20c1c5f719065e69ad01e10acc01e04bfcad696c311219bc63e91df7a1e08
-## 14          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=a65e968a7c2939aae7e7b8fe18914858e867b335c7590297e6ed72f6283a8266
-## 15                     https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=8b01069ae34464e18a15d1500667f1495c4cd5e148c1c16b39900c6c35b43b25
-## 16                          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.Bird_Conservancy_of_the_Rockies.brd_personnel.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200819T183258Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200819%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=df133246a90d0bbdef8259b3630b8df16e72d17bce633cbad9b18d37aaafe9e2</code></pre>
+## 1                          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=47423b91b0499572b1038dadf63acd4199bd843591749bad14b296634bb7bb4e
+## 2              https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=ca82c9c3accb271d59e70c34ee4c99c841ea5b9e529cd979fb7e84b4a8ea328e
+## 3         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.basic.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=0f6b0f8555a53a37db4bdfa57d778215cb2651be94acccd50d26d6c641264b3d
+## 4                         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=b8f2622a26ae288c79a78c60346b75760f20d4ca275b7bc9aba2f7b5846fdc93
+## 5                             https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=2da71b88cf363fa92347c421762bbf66bda2187870477b08c7ce0d65a24e64a9
+## 6                      https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.2015-07.basic.20191107T152331Z.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=68572a6c283a78017b439b83ceb8133ea40e84b8b56c6b45afe17a817651f606
+## 7        https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/basic/NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.basic.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=04d0ec670627ece744da5f47754a5831cb14616a5edf528c2c71e0832dae80d1
+## 8         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_references.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=f06c9f2186ab0bbc5086ac8a7f94fe2708b826caf82222751499f6147a97c15e
+## 9                       https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.variables.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=8b76b1658beaaa845cc2c4921043d85744587c9a54020005b4ce5d2c35752b54
+## 10          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.EML.20150701-20150705.20191107T152331Z.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=e77c691de9cef0fc117b2f4a4ce2cc1102ed77a4339ad480b5c8a0667529862e
+## 11 https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_countdata.2015-07.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=dc45b59b5e250732d2fce65b571b73e632364fb890aea3c201aab0b535049fc6
+## 12                     https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP0.10003.001.validation.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=51a307ef490175b25f4aac0fc010f4a8a7609edd4473622fbb7ed5d7251601b5
+## 13               https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.2015-07.expanded.20191107T152331Z.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=265a49b43625e1e7ca922f51b93f2fad1954318f3c818997ba3d344465cf0a7e
+## 14                         https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.readme.20191107T152331Z.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=13953757a4e6e626370087e410e8a6caa9748d3fcf691a1e38c98999df2312c4
+## 15  https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.D09.WOOD.DP1.10003.001.brd_perpoint.2015-07.expanded.20191107T152331Z.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=f515888ef21406bbe2b31505c68abd10734f362b2c4ea2f64f7adfc93d07c48c
+## 16                          https://neon-prod-pub-1.s3.data.neonscience.org/NEON.DOM.SITE.DP1.10003.001/PROV/WOOD/20150701T000000--20150801T000000/expanded/NEON.Bird_Conservancy_of_the_Rockies.brd_personnel.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20200820T130356Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=pub-internal-read%2F20200820%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Signature=c0b8f7b2d8b6b29da1d3caf2e0b2fafa87b5cd8e95def7c111423f2a8e14caa7</code></pre>
 <p>In this output, <code>name</code> and <code>url</code> are key fields. It provides us with the names
 of the files available for this site and month, and URLs where we can get the
 files. We’ll use the file names to pick which ones we want.</p>
@@ -1675,7 +1676,7 @@ pulled have actual data in them, let’s make a quick graphic:</p>
 <div id="instrumentation-data-is" class="section level3">
 <h3><span class="header-section-number">2.11.4</span> Instrumentation data (IS)</h3>
 <p>The process is essentially the same for sensor data. We’ll do the same series of
-queries for Soil Temperature, DP1.00041.001. Let’s use data from Moab in March
+queries for Soil Temperature, DP1.00041.001. Let’s use data from Moab in June
 2017 this time.</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="co"># Request soil temperature data availability info</span></a>
 <a class="sourceLine" id="cb63-2" data-line-number="2">req.soil &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/products/DP1.00041.001&quot;</span>)</a>
@@ -1693,16 +1694,16 @@ queries for Soil Temperature, DP1.00041.001. Let’s use data from Moab in March
 <a class="sourceLine" id="cb63-14" data-line-number="14"><span class="kw">length</span>(tmp.files<span class="op">$</span>data<span class="op">$</span>files<span class="op">$</span>name) <span class="co"># There are a lot of available files</span></a></code></pre></div>
 <pre><code>## [1] 190</code></pre>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">tmp.files<span class="op">$</span>data<span class="op">$</span>files<span class="op">$</span>name[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]   <span class="co"># Let&#39;s print the first 10</span></a></code></pre></div>
-<pre><code>##  [1] &quot;NEON.D13.MOAB.DP1.00041.001.003.504.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
-##  [2] &quot;NEON.D13.MOAB.DP1.00041.001.002.505.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
-##  [3] &quot;NEON.D13.MOAB.DP1.00041.001.003.502.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
-##  [4] &quot;NEON.D13.MOAB.DP1.00041.001.001.507.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
-##  [5] &quot;NEON.D13.MOAB.DP1.00041.001.004.507.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
-##  [6] &quot;NEON.D13.MOAB.DP1.00041.001.004.508.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
-##  [7] &quot;NEON.D13.MOAB.DP1.00041.001.003.501.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
-##  [8] &quot;NEON.D13.MOAB.DP1.00041.001.001.503.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
-##  [9] &quot;NEON.D13.MOAB.DP1.00041.001.002.503.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
-## [10] &quot;NEON.D13.MOAB.DP1.00041.001.002.509.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;</code></pre>
+<pre><code>##  [1] &quot;NEON.D13.MOAB.DP1.00041.001.005.502.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
+##  [2] &quot;NEON.D13.MOAB.DP1.00041.001.002.505.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
+##  [3] &quot;NEON.D13.MOAB.DP1.00041.001.003.503.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
+##  [4] &quot;NEON.D13.MOAB.DP1.00041.001.002.506.030.ST_30_minute.2017-06.expanded.20200620T070859Z.csv&quot;
+##  [5] &quot;NEON.D13.MOAB.DP1.00041.001.002.503.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
+##  [6] &quot;NEON.D13.MOAB.DP1.00041.001.004.506.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
+##  [7] &quot;NEON.D13.MOAB.DP1.00041.001.005.506.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
+##  [8] &quot;NEON.D13.MOAB.DP1.00041.001.2017-06.expanded.20200620T070859Z.zip&quot;                         
+##  [9] &quot;NEON.D13.MOAB.DP1.00041.001.002.501.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot; 
+## [10] &quot;NEON.D13.MOAB.DP1.00041.001.003.507.001.ST_1_minute.2017-06.expanded.20200620T070859Z.csv&quot;</code></pre>
 <p>These file names start and end the same way as the observational files, but the
 middle is a little more cryptic. The structure from beginning to end is:</p>
 <p><strong>NEON.[domain number].[site code].[data product ID].00000.
@@ -1766,27 +1767,22 @@ we’ll look at the flight over San Joaquin Experimental Range (SJER) in March
 <a class="sourceLine" id="cb69-16" data-line-number="16"></a>
 <a class="sourceLine" id="cb69-17" data-line-number="17"><span class="co"># this list of files is very long, so we&#39;ll just look at the first ten</span></a>
 <a class="sourceLine" id="cb69-18" data-line-number="18"><span class="kw">head</span>(cam.files<span class="op">$</span>data<span class="op">$</span>files<span class="op">$</span>name, <span class="dv">10</span>)</a></code></pre></div>
-<pre><code>##  [1] &quot;17032816_EH021656(20170328184854)-0540_ort.tif&quot;
-##  [2] &quot;17032816_EH021656(20170328195828)-1133_ort.tif&quot;
-##  [3] &quot;17032816_EH021656(20170328192358)-0821_ort.tif&quot;
-##  [4] &quot;17032816_EH021656(20170328200520)-1192_ort.tif&quot;
-##  [5] &quot;17032816_EH021656(20170328175352)-0095_ort.tif&quot;
-##  [6] &quot;17032816_EH021656(20170328185327)-0570_ort.tif&quot;
-##  [7] &quot;17032816_EH021656(20170328184940)-0550_ort.tif&quot;
-##  [8] &quot;17032816_EH021656(20170328195353)-1092_ort.tif&quot;
-##  [9] &quot;17032816_EH021656(20170328184931)-0548_ort.tif&quot;
-## [10] &quot;17032816_EH021656(20170328195645)-1111_ort.tif&quot;</code></pre>
+<pre><code>##  [1] &quot;17032816_EH021656(20170328191359)-0749_ort.tif&quot;
+##  [2] &quot;17032816_EH021656(20170328175817)-0131_ort.tif&quot;
+##  [3] &quot;17032816_EH021656(20170328191318)-0740_ort.tif&quot;
+##  [4] &quot;17032816_EH021656(20170328195259)-1080_ort.tif&quot;
+##  [5] &quot;17032816_EH021656(20170328183621)-0444_ort.tif&quot;
+##  [6] &quot;17032816_EH021656(20170328184706)-0517_ort.tif&quot;
+##  [7] &quot;17032816_EH021656(20170328190146)-0648_ort.tif&quot;
+##  [8] &quot;17032816_EH021656(20170328192541)-0843_ort.tif&quot;
+##  [9] &quot;17032816_EH021656(20170328182837)-0379_ort.tif&quot;
+## [10] &quot;17032816_EH021656(20170328193045)-0880_ort.tif&quot;</code></pre>
 <p>File names for AOP data are more variable than for IS or OS data;
 different AOP data products use different naming conventions.
 File formats differ by product as well.</p>
-<p>This particular product, camera imagery, is stored in TIFF files.
-For a full list of AOP data products, their naming conventions, and
-their file formats, see <strong>update from NEON?</strong>.</p>
+<p>This particular product, camera imagery, is stored in TIFF files.</p>
 <p>Instead of reading a TIFF into R, we’ll download it to the working
-directory. This is one option for getting AOP files from the API; if
-you plan to work with the files in R, you’ll need to know how to
-read the relevant file types into R. We hope to add tutorials for
-this in the near future.</p>
+directory. This is one option for getting AOP files from the API.</p>
 <p>To download the TIFF file, we use the <code>downloader</code> package, and we’ll
 select a file based on the time stamp in the file name: <code>20170328192931</code></p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">download</span>(cam.files<span class="op">$</span>data<span class="op">$</span>files<span class="op">$</span>url[<span class="kw">grep</span>(<span class="st">&quot;20170328192931&quot;</span>, </a>
@@ -1794,13 +1790,10 @@ select a file based on the time stamp in the file name: <code>20170328192931</co
 <a class="sourceLine" id="cb71-3" data-line-number="3">         <span class="kw">paste</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/SJER_image.tif&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>), <span class="dt">mode=</span><span class="st">&quot;wb&quot;</span>)</a></code></pre></div>
 <p>The image, below, of the San Joaquin Experimental Range should now be in your
 working directory.</p>
-<figure>
-<pre><code>&lt;a href=&quot;https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/dev-aten/graphics/neon-aop/SJER_tile_20170328192931.png&quot;&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/dev-aten/graphics/neon-aop/SJER_tile_20170328192931.png&quot;&gt;&lt;/a&gt;
-&lt;figcaption&gt; An example of camera data (DP1.30010.001) from the San Joaquin 
-Experimental Range. Source: National Ecological Observatory Network (NEON) 
-&lt;/figcaption&gt;</code></pre>
-</figure>
+<p><img src="images/SJER_tile_20170328192931.png" width="500" /></p>
+<blockquote>
+<p>An example of camera data (DP1.30010.001) from the San Joaquin Experimental Range. Source: National Ecological Observatory Network (NEON)</p>
+</blockquote>
 </div>
 <div id="geolocation-data" class="section level3">
 <h3><span class="header-section-number">2.11.6</span> Geolocation data</h3>
@@ -1834,8 +1827,8 @@ code is in the <code>geoNEON</code> package on GitHub.</p>
 <p>Let’s look at the named locations in the bird data we downloaded above. To do this,
 look for the field called <code>namedLocation</code>, which is present in all observational
 data products, both aquatic and terrestrial.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co"># view named location</span></a>
-<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">head</span>(brd.point<span class="op">$</span>namedLocation)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="co"># view named location</span></a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">head</span>(brd.point<span class="op">$</span>namedLocation)</a></code></pre></div>
 <pre><code>## [1] &quot;WOOD_013.birdGrid.brd&quot; &quot;WOOD_013.birdGrid.brd&quot; &quot;WOOD_013.birdGrid.brd&quot;
 ## [4] &quot;WOOD_013.birdGrid.brd&quot; &quot;WOOD_013.birdGrid.brd&quot; &quot;WOOD_013.birdGrid.brd&quot;</code></pre>
 <p>Here we see the first six entries in the <code>namedLocation</code> column which tells us
@@ -1843,12 +1836,12 @@ the names of the Terrestrial Observation plots where the bird surveys were
 conducted.</p>
 <p>We can query the locations endpoint of the API for the first named location,
 <code>WOOD_013.birdGrid.brd</code>.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co"># location data </span></a>
-<a class="sourceLine" id="cb75-2" data-line-number="2">req.loc &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/locations/WOOD_013.birdGrid.brd&quot;</span>)</a>
-<a class="sourceLine" id="cb75-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb75-4" data-line-number="4"><span class="co"># make this JSON readable</span></a>
-<a class="sourceLine" id="cb75-5" data-line-number="5">brd.WOOD_<span class="dv">013</span> &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(req.loc, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
-<a class="sourceLine" id="cb75-6" data-line-number="6">brd.WOOD_<span class="dv">013</span></a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="co"># location data </span></a>
+<a class="sourceLine" id="cb74-2" data-line-number="2">req.loc &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/locations/WOOD_013.birdGrid.brd&quot;</span>)</a>
+<a class="sourceLine" id="cb74-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="co"># make this JSON readable</span></a>
+<a class="sourceLine" id="cb74-5" data-line-number="5">brd.WOOD_<span class="dv">013</span> &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(req.loc, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
+<a class="sourceLine" id="cb74-6" data-line-number="6">brd.WOOD_<span class="dv">013</span></a></code></pre></div>
 <pre><code>## $data
 ## $data$locationName
 ## [1] &quot;WOOD_013.birdGrid.brd&quot;
@@ -1965,11 +1958,11 @@ bird observations.</p>
 First we’ll use <code>getLocByName()</code> to get the additional spatial information
 available through the API, and look at the spatial resolution available in the
 initial download:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="co"># load the geoNEON package</span></a>
-<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">library</span>(geoNEON)</a>
-<a class="sourceLine" id="cb77-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb77-4" data-line-number="4"><span class="co"># extract the spatial data</span></a>
-<a class="sourceLine" id="cb77-5" data-line-number="5">brd.point.loc &lt;-<span class="st"> </span><span class="kw">getLocByName</span>(brd.point)</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="co"># load the geoNEON package</span></a>
+<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="kw">library</span>(geoNEON)</a>
+<a class="sourceLine" id="cb76-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb76-4" data-line-number="4"><span class="co"># extract the spatial data</span></a>
+<a class="sourceLine" id="cb76-5" data-line-number="5">brd.point.loc &lt;-<span class="st"> </span><span class="kw">getLocByName</span>(brd.point)</a></code></pre></div>
 <pre><code>## 
   |                                                                            
   |                                                                      |   0%
@@ -1987,14 +1980,14 @@ initial download:</p>
   |============================================================          |  86%
   |                                                                            
   |======================================================================| 100%</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="co"># plot bird point locations </span></a>
-<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="co"># note that decimal degrees is also an option in the data</span></a>
-<a class="sourceLine" id="cb79-3" data-line-number="3"><span class="kw">symbols</span>(brd.point.loc<span class="op">$</span>easting, brd.point.loc<span class="op">$</span>northing, </a>
-<a class="sourceLine" id="cb79-4" data-line-number="4">        <span class="dt">circles=</span>brd.point.loc<span class="op">$</span>coordinateUncertainty, </a>
-<a class="sourceLine" id="cb79-5" data-line-number="5">        <span class="dt">xlab=</span><span class="st">&quot;Easting&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Northing&quot;</span>, <span class="dt">tck=</span><span class="fl">0.01</span>, <span class="dt">inches=</span>F)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="co"># plot bird point locations </span></a>
+<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="co"># note that decimal degrees is also an option in the data</span></a>
+<a class="sourceLine" id="cb78-3" data-line-number="3"><span class="kw">symbols</span>(brd.point.loc<span class="op">$</span>easting, brd.point.loc<span class="op">$</span>northing, </a>
+<a class="sourceLine" id="cb78-4" data-line-number="4">        <span class="dt">circles=</span>brd.point.loc<span class="op">$</span>coordinateUncertainty, </a>
+<a class="sourceLine" id="cb78-5" data-line-number="5">        <span class="dt">xlab=</span><span class="st">&quot;Easting&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Northing&quot;</span>, <span class="dt">tck=</span><span class="fl">0.01</span>, <span class="dt">inches=</span>F)</a></code></pre></div>
 <p><img src="02_Introduction_to_NEON_files/figure-html/brd-extr-NL-1.png" width="672" /></p>
 <p>And use <code>getLocTOS()</code> to calculate the point locations of observations.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">brd.point.pt &lt;-<span class="st"> </span><span class="kw">getLocTOS</span>(brd.point, <span class="st">&quot;brd_perpoint&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">brd.point.pt &lt;-<span class="st"> </span><span class="kw">getLocTOS</span>(brd.point, <span class="st">&quot;brd_perpoint&quot;</span>)</a></code></pre></div>
 <pre><code>## 
   |                                                                            
   |                                                                      |   0%
@@ -2124,11 +2117,11 @@ initial download:</p>
   |===================================================================== |  98%
   |                                                                            
   |======================================================================| 100%</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="co"># plot bird point locations </span></a>
-<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="co"># note that decimal degrees is also an option in the data</span></a>
-<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="co"># symbols(brd.point.pt$easting, brd.point.pt$northing, </span></a>
-<a class="sourceLine" id="cb82-4" data-line-number="4"><span class="co">#         circles=brd.point.pt$adjCoordinateUncertainty, </span></a>
-<a class="sourceLine" id="cb82-5" data-line-number="5"><span class="co">#         xlab=&quot;Easting&quot;, ylab=&quot;Northing&quot;, tck=0.01, inches=F)</span></a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="co"># plot bird point locations </span></a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="co"># note that decimal degrees is also an option in the data</span></a>
+<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="co"># symbols(brd.point.pt$easting, brd.point.pt$northing, </span></a>
+<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">#         circles=brd.point.pt$adjCoordinateUncertainty, </span></a>
+<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="co">#         xlab=&quot;Easting&quot;, ylab=&quot;Northing&quot;, tck=0.01, inches=F)</span></a></code></pre></div>
 <p>Now you can see the individual points where the respective point counts were
 located.</p>
 </div>
@@ -2168,9 +2161,9 @@ to ∞, but in the meantime users will want to set these manually. They are
 set to non-default values in the examples below.</p>
 <p>For the first example, let’s query for the loon family, Gaviidae, in the
 bird taxonomy. Note that query parameters are case-sensitive.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">loon.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?family=Gaviidae&amp;offset=0&amp;limit=500&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">loon.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?family=Gaviidae&amp;offset=0&amp;limit=500&quot;</span>)</a></code></pre></div>
 <p>Parse the results into a list using <code>fromJSON()</code>:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">loon.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(loon.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">loon.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(loon.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a></code></pre></div>
 <p>And look at the <code>$data</code> element of the results, which contains:</p>
 <ul>
 <li>The full taxonomy of each taxon</li>
@@ -2182,7 +2175,7 @@ bird taxonomy. Note that query parameters are case-sensitive.</p>
 <p>The terms used for each field are matched to Darwin Core (dwc) and
 the Global Biodiversity Information Facility (gbif) terms, where
 possible, and the matches are indicated in the column headers.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">loon.list<span class="op">$</span>data</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">loon.list<span class="op">$</span>data</a></code></pre></div>
 <pre><code>##   taxonTypeCode taxonID acceptedTaxonID dwc:scientificName
 ## 1          BIRD    ARLO            ARLO      Gavia arctica
 ## 2          BIRD    COLO            COLO        Gavia immer
@@ -2215,9 +2208,9 @@ is one of the shorter ones, and use the <code>verbose=true</code> option to see
 a more extensive list of taxon data, including many taxon ranks that
 aren’t populated for these taxa. For space here, we display only
 the first 10 taxa:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">mam.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?taxonTypeCode=SMALL_MAMMAL&amp;offset=0&amp;limit=500&amp;verbose=true&quot;</span>)</a>
-<a class="sourceLine" id="cb87-2" data-line-number="2">mam.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(mam.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
-<a class="sourceLine" id="cb87-3" data-line-number="3">mam.list<span class="op">$</span>data[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,]</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">mam.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?taxonTypeCode=SMALL_MAMMAL&amp;offset=0&amp;limit=500&amp;verbose=true&quot;</span>)</a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">mam.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(mam.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
+<a class="sourceLine" id="cb86-3" data-line-number="3">mam.list<span class="op">$</span>data[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,]</a></code></pre></div>
 <pre><code>##    taxonTypeCode taxonID acceptedTaxonID               dwc:scientificName
 ## 1   SMALL_MAMMAL    AMHA            AMHA        Ammospermophilus harrisii
 ## 2   SMALL_MAMMAL    AMIN            AMIN       Ammospermophilus interpres
@@ -2367,9 +2360,9 @@ search will also fail with spaces. Search for
 <code>Abronia%20minor%20Standl.</code>, and in this case we can omit
 <code>offset</code> and <code>limit</code> because we know there can only be a single
 result:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">am.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?scientificname=Abronia%20minor%20Standl.&quot;</span>)</a>
-<a class="sourceLine" id="cb89-2" data-line-number="2">am.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(am.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
-<a class="sourceLine" id="cb89-3" data-line-number="3">am.list<span class="op">$</span>data</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">am.req &lt;-<span class="st"> </span><span class="kw">GET</span>(<span class="st">&quot;http://data.neonscience.org/api/v0/taxonomy/?scientificname=Abronia%20minor%20Standl.&quot;</span>)</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">am.list &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(<span class="kw">content</span>(am.req, <span class="dt">as=</span><span class="st">&quot;text&quot;</span>))</a>
+<a class="sourceLine" id="cb88-3" data-line-number="3">am.list<span class="op">$</span>data</a></code></pre></div>
 <pre><code>##   taxonTypeCode taxonID acceptedTaxonID    dwc:scientificName
 ## 1         PLANT   ABMI2           ABMI2 Abronia minor Standl.
 ##   dwc:scientificNameAuthorship dwc:taxonRank  dwc:vernacularName
@@ -2395,12 +2388,9 @@ look <a href="https://www.neonscience.org/neonDataStackR" target="_blank">here</
 </div>
 <div id="intro-to-neon-exercises" class="section level2">
 <h2><span class="header-section-number">2.13</span> Intro to NEON Exercises</h2>
-<div id="computational-1" class="section level3">
-<h3><span class="header-section-number">2.13.1</span> Computational</h3>
-<div id="part-1-sign-up-for-and-use-an-neon-api-token-1" class="section level4">
-<h4><span class="header-section-number">2.13.1.1</span> Part 1: Sign up for and Use an NEON API Token:</h4>
-<p><em>Code to come</em></p>
-</div>
+<div id="computational-part-2" class="section level3">
+<h3><span class="header-section-number">2.13.1</span> Computational Part 2</h3>
+<p><em>code to come</em></p>
 </div>
 <div id="written" class="section level3">
 <h3><span class="header-section-number">2.13.2</span> Written</h3>
